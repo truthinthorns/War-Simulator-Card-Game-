@@ -8,6 +8,7 @@ public class WarSim {
 
     private static ArrayList<Integer> deck = new ArrayList<>();
     
+    //this method adds cards with values 1-13 four times to the deck to simulate a real deck of cards. After, it shuffles the deck 4 times.
     private static void InitializeDeck()
     {
         for(int i = 1; i < 14; i++)
@@ -23,6 +24,7 @@ public class WarSim {
         Collections.shuffle(deck);
     }
     
+    //this method adds x (times variable) amount of cards to wDeck from the top of lDeck. wDeck=winning/receiving deck, lDeck = losing/giving deck
     private static void TransferCards(int times,ArrayList<Integer> wDeck,ArrayList<Integer> lDeck)
     {
         for (int i = 0; i < times; i++)
@@ -48,6 +50,9 @@ public class WarSim {
         System.out.print("Do you want to enter your cards, or run it with a random order of cards?\n1)My Own Cards\n2)Random Order\nInput: ");
         gameChoice=scanner.nextInt();
         scanner.nextLine();
+        
+        //this code block prompts the user to enter each players cards, with each card value being separated by a space. it then adds the entered values/cards into the
+        //corresponding player's deck
         if(gameChoice==1)
         {
             System.out.print("Enter the first player's cards, with a space separating each. (Jack=11,Queen=12,King=13,Ace=1): ");
@@ -61,6 +66,8 @@ public class WarSim {
             for(int i=0;i<tempLine.length;i++)
                 p2Deck.add(Integer.parseInt(tempLine[i]));
         }
+        
+        //this code block simulates if the cards were dealt out one at a time to each player.
         else if (gameChoice==2)
         {
             for (int i = 0; i < deck.size(); i++) {
@@ -85,8 +92,11 @@ public class WarSim {
                 choice = 2;
             }
         }
+        
+        //while both players have at least 1 card, and a winner hasn't been decided.
         while (!p1Deck.isEmpty() && !p2Deck.isEmpty() && winner == -1) 
         {
+            //if the user wants to see the cards after each bout/round. the if/else blocks adds a comma after each card if it's not the last one in the player's deck.
             if (choice == 1) 
             {
                 System.out.print("\nP1: ");
@@ -167,6 +177,8 @@ public class WarSim {
                 }
             }
         }
+        
+        //output a message based on who won
         if (winner == 1) {
             System.out.println("P1 WON");
         } else if (winner == 2) {
