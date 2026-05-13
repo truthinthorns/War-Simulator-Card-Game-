@@ -140,11 +140,11 @@ public class WarSim {
             //output a message based on who won
             switch (result.winner()) {
                 case 0 ->
-                    System.out.println("Nobody WON... :(");
+                    System.out.println("\nNobody WON... :(\n");
                 case 1 ->
-                    System.out.println("P1 WON");
+                    System.out.println("\nP1 WON!\n");
                 case 2 ->
-                    System.out.println("P2 WON");
+                    System.out.println("\nP2 WON!\n");
             }
 
             System.out.print("Do you want to see how many turns it took?\n1)Yes\n2)No\n3)Surprise Me\nInput: ");
