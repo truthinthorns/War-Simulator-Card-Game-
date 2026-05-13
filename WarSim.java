@@ -13,7 +13,7 @@ record WarResult(int winner, int turnCount) {};
 public class WarSim {
 
     private static final Random RANDOM = new Random();
-    private static final int MAXTURNS = 300;
+    private static final int MAXTURNS = 1000;
 
     // this method adds cards with values 1-13 four times to the deck to simulate a real deck of cards.
     // After, it shuffles the deck.
